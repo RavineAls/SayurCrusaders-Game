@@ -17,6 +17,15 @@ public class SceneScript : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void GotoHelp()
+    {
+        SceneManager.LoadScene("HelpMenu");
+    }
+    public void GotoWeapon()
+    {
+        SceneManager.LoadScene("WeaponMenu");
+    }
     public void CloseApp()
     {
         Application.Quit();
