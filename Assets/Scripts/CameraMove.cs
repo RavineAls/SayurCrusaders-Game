@@ -19,6 +19,7 @@ public class CameraMove : MonoBehaviour
     {
         //rotationY += Input.GetAxis("Mouse X") * sensitivity;
         rotationX += Input.GetAxis("Mouse Y") * -1 * sensitivity;
+        rotationX = Mathf.Clamp(rotationX, -90f, 90f);
         transform.localEulerAngles = new Vector3(rotationX,rotationY,0);
         
         //Press the space bar to toggle Cursor Lock

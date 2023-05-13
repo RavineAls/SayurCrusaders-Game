@@ -10,6 +10,7 @@ public class SwordControl : MonoBehaviour
     public bool CanAttack = true;
     public bool isAttacking = false;
     float swingTimer;
+    public int damage = 2;
     // Start is called before the first frame update
     void Start()
     {

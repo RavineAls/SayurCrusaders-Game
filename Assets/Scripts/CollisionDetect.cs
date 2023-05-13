@@ -9,11 +9,11 @@ public class CollisionDetect : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy_Hard" && swrd.isAttacking && other.GetComponent<EnemyScript>().vulnerable){
-            StartCoroutine(other.GetComponent<EnemyScript>().iFrameCD());
+            StartCoroutine(other.GetComponent<EnemyScript>().iFrameCD(swrd.damage));
         }
 
         if(other.tag == "Enemy_Soft" && swrd.isAttacking && other.GetComponent<EnemyScript>().vulnerable){
-            StartCoroutine(other.GetComponent<EnemyScript>().iFrameCD());
+            StartCoroutine(other.GetComponent<EnemyScript>().iFrameCD(swrd.damage));
         }
     }
 }

@@ -5,13 +5,14 @@ using System;
 
 public class EnemyScript : MonoBehaviour
 {
-    public float iFrame = 0.5f;
+    public float iFrame = 0.3f;
     public bool vulnerable = true;
     public Transform playerTransform;
     public AudioSource hitSound;
     public float speed = 3;
     public float minDistance = 1.5f;
     string[] avoidTags = {"Enemy_Hard", "Enemy_Soft", "Player"};
+    public int HealthPoint = 5;
 
     void Start()
     {
@@ -20,12 +21,15 @@ public class EnemyScript : MonoBehaviour
 
     void Update()
     {
+        if(HealthPoint<=0)
+        {
+            Destroy(gameObject);
+        }
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         direction.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
-
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
         Collider[] nearbyEnemies = Physics.OverlapSphere(transform.position, minDistance);
@@ -40,9 +44,10 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    public IEnumerator iFrameCD()
+    public IEnumerator iFrameCD(int damage)
     {
         vulnerable = false;
+        HealthPoint -= damage;
         //GetComponent<Animator>().SetTrigger("A_Hit");
         hitSound.Play();
         transform.Translate(Vector3.back * Time.deltaTime * 100);

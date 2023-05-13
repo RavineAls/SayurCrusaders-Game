@@ -9,7 +9,7 @@ public class CapsuleMove : MonoBehaviour
  
     public float sensitivity = 7f;
     float speed =5.0f;
-    public float jumpForce = 10f;
+    public float jumpForce = 8f;
     private Rigidbody rb;
     bool isJumping = false;
     // Start is called before the first frame update
@@ -49,7 +49,7 @@ public class CapsuleMove : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed = 15.0f;
+            speed = 10.0f;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
