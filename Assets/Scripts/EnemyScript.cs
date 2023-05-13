@@ -13,17 +13,20 @@ public class EnemyScript : MonoBehaviour
     public float minDistance = 1.5f;
     string[] avoidTags = {"Enemy_Hard", "Enemy_Soft", "Player"};
     public int HealthPoint = 5;
+    public int enemyDamage = 1;
+    Rigidbody rb;
 
     void Start()
     {
         vulnerable = true;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         if(HealthPoint<=0)
         {
-            Destroy(gameObject);
+            StartCoroutine(enemyDead());
         }
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         direction.y = 0;
@@ -47,11 +50,17 @@ public class EnemyScript : MonoBehaviour
     public IEnumerator iFrameCD(int damage)
     {
         vulnerable = false;
-        HealthPoint -= damage;
         //GetComponent<Animator>().SetTrigger("A_Hit");
         hitSound.Play();
+        HealthPoint -= damage;
         transform.Translate(Vector3.back * Time.deltaTime * 100);
         yield return new WaitForSeconds(iFrame);
         vulnerable = true;
+    }
+
+    public IEnumerator enemyDead()
+    {
+        yield return new WaitForSeconds(0.25f);
+        Destroy(gameObject);
     }
 }
