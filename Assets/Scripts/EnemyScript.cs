@@ -15,11 +15,13 @@ public class EnemyScript : MonoBehaviour
     public int HealthPoint = 5;
     public int enemyDamage = 1;
     Rigidbody rb;
+    public EnemyCounter enCount;
 
     void Start()
     {
         vulnerable = true;
         rb = GetComponent<Rigidbody>();
+        enCount.EnemySpawnedOrDestroyed();
     }
 
     void Update()
@@ -62,5 +64,10 @@ public class EnemyScript : MonoBehaviour
     {
         yield return new WaitForSeconds(0.25f);
         Destroy(gameObject);
+    }
+
+    void OnDestroy()
+    {
+        enCount.EnemySpawnedOrDestroyed();
     }
 }
