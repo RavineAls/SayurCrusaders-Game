@@ -7,6 +7,7 @@ TagManager:
   - Enemy_Hard
   - Enemy_Soft
   - Ground
+  - Spawner
   layers:
   - Default
   - TransparentFX

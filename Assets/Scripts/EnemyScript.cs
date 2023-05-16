@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
     public int enemyDamage = 1;
     Rigidbody rb;
     public EnemyCounter enCount;
+    public WaveSpawner wvSpwnr;
 
     void Start()
     {
@@ -69,5 +70,9 @@ public class EnemyScript : MonoBehaviour
     void OnDestroy()
     {
         enCount.EnemySpawnedOrDestroyed();
+        if(wvSpwnr != null)
+        {
+            wvSpwnr.EnemyDefeated();
+        }
     }
 }

@@ -85,15 +85,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a22809cfe47d02240a775430463739a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a22809cfe47d02240a775430463739a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.09
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a22809cfe47d02240a775430463739a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a22809cfe47d02240a775430463739a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -361,3 +361,4 @@ MonoBehaviour:
   HealthPoint: 5
   enemyDamage: 1
   enCount: {fileID: 0}
+  wvSpwnr: {fileID: 0}
