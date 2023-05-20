@@ -7,6 +7,9 @@ public class WaveSpawner : MonoBehaviour
     public GameObject[] weakEnemyPrefab; // Prefab for the weaker enemy
     public Transform[] spawnPoints; // Array of spawn points for enemies
     public WaveCounter wvCount;
+    public AudioSource waveStart;
+    public AudioSource enemySpawn;
+    public PlayerScript pScript;
 
     public int initialDelay = 5; // Initial delay before the first wave starts
     public float timeBetweenWaves = 5f; // Time delay between waves
@@ -25,6 +28,9 @@ public class WaveSpawner : MonoBehaviour
 
         while (currentWave < 5) // Adjust the number of waves as needed
         {
+            waveStart.Play();
+            pScript.Heal(5);
+            yield return new WaitForSeconds(1f);
             currentWave++;
             wvCount.WaveStart(currentWave);
             StartCoroutine(SpawnWave());
@@ -53,7 +59,7 @@ public class WaveSpawner : MonoBehaviour
             SpawnPrefab(strongEnemyPrefab, spawnPoint);
             spawnedEnemies++;
 
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.7f/currentWave);
         }
 
         for (int i = 0; i < weakEnemyCount; i++)
@@ -65,7 +71,7 @@ public class WaveSpawner : MonoBehaviour
             SpawnPrefab(weakEnemyPrefab[randomEnIndex], spawnPoint);
             spawnedEnemies++;
 
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.7f/currentWave);
         }
     }
 
@@ -83,6 +89,7 @@ public class WaveSpawner : MonoBehaviour
         enemyScript.playerTransform = playerTransform;
         enemyScript.enCount = enCount;
         enemyScript.wvSpwnr = wvSpwnr;
+        enemySpawn.Play();
     }
 
     public void EnemyDefeated()

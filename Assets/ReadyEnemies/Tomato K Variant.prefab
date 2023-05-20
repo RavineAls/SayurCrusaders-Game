@@ -125,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a22809cfe47d02240a775430463739a0, type: 3}
       propertyPath: m_Name
-      value: Tomato Variant
+      value: Tomato K Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a22809cfe47d02240a775430463739a0, type: 3}
       propertyPath: m_IsActive
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05858f29cc48efb469496c9cfd2be316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iFrame: 0.3
+  iFrame: 0.15
   vulnerable: 1
   playerTransform: {fileID: 0}
   hitSound: {fileID: 113711422}
@@ -355,7 +355,7 @@ MonoBehaviour:
   minDistance: 1.5
   HealthPoint: 5
   enemyDamage: 1
-  knockBack: 100
+  knockBack: 50
   enCount: {fileID: 0}
   wvSpwnr: {fileID: 0}
 --- !u!4 &4351421695039207016 stripped

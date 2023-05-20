@@ -14,6 +14,7 @@ public class EnemyScript : MonoBehaviour
     string[] avoidTags = {"Enemy_Hard", "Enemy_Soft", "Player"};
     public int HealthPoint = 5;
     public int enemyDamage = 1;
+    public float knockBack = 100f;
     Rigidbody rb;
     public EnemyCounter enCount;
     public WaveSpawner wvSpwnr;
@@ -56,7 +57,7 @@ public class EnemyScript : MonoBehaviour
         //GetComponent<Animator>().SetTrigger("A_Hit");
         hitSound.Play();
         HealthPoint -= damage;
-        transform.Translate(Vector3.back * Time.deltaTime * 100);
+        transform.Translate(Vector3.back * Time.deltaTime * knockBack);
         yield return new WaitForSeconds(iFrame);
         vulnerable = true;
     }

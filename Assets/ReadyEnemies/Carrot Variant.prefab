@@ -312,10 +312,11 @@ MonoBehaviour:
   vulnerable: 1
   playerTransform: {fileID: 0}
   hitSound: {fileID: 1632438644}
-  speed: 2.5
+  speed: 4
   minDistance: 1.5
   HealthPoint: 7
   enemyDamage: 2
+  knockBack: 100
   enCount: {fileID: 0}
   wvSpwnr: {fileID: 0}
 --- !u!4 &3418216183261558125 stripped

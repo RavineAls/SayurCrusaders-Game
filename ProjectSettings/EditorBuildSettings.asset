@@ -9,12 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 64490d2aa0059f7489c551ff61fb14ed
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/HelpMenu.unity
     guid: bcd5781f961278b47b68a56e48ef5b9b
   - enabled: 1
     path: Assets/Scenes/WeaponMenu.unity
     guid: 6e70b0ed30ea0e3498886f6cf798030b
+  - enabled: 1
+    path: Assets/Scenes/KerisScene.unity
+    guid: c52240cb5bcc18b4b99791f6373b8d4a
+  - enabled: 1
+    path: Assets/Scenes/KujangScene.unity
+    guid: c13293be0e93a3045ae2215c4da4cc7e
+  - enabled: 1
+    path: Assets/Scenes/PanScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 91beb322efc3fa148a2c36caf7707ef7
   m_configObjects: {}

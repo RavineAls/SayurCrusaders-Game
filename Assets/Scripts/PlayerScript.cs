@@ -24,6 +24,15 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(playerIFrameCD());
     }
 
+    public void Heal(int healAmmount)
+    {
+        currentHealth += healAmmount;
+        if (currentHealth > maxHealth){
+            currentHealth = maxHealth;
+        }
+        healthDisplay.UpdateHealth(currentHealth);
+    }
+
     public IEnumerator playerIFrameCD()
     {
         vulnerable = false;

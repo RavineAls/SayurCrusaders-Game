@@ -356,9 +356,10 @@ MonoBehaviour:
   vulnerable: 1
   playerTransform: {fileID: 0}
   hitSound: {fileID: 1928416425}
-  speed: 3.5
+  speed: 6.5
   minDistance: 1.5
   HealthPoint: 5
   enemyDamage: 1
+  knockBack: 100
   enCount: {fileID: 0}
   wvSpwnr: {fileID: 0}
