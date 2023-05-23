@@ -11,17 +11,19 @@ public class SwordControl : MonoBehaviour
     public bool isAttacking = false;
     float swingTimer;
     public int damage = 2;
+    CapsuleMove cMove;
     // Start is called before the first frame update
     void Start()
     {
         Animator SWG = Sword.GetComponent<Animator>();
         SWG.Play("Idle");
+        cMove = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleMove>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("Fire1") && CanAttack)
+        if(Input.GetButton("Fire1") && CanAttack && Cursor.lockState != CursorLockMode.None)
         {
             isAttacking = true;
             CanAttack=false;

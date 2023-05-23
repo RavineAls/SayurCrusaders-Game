@@ -10,6 +10,8 @@ public class WaveSpawner : MonoBehaviour
     public AudioSource waveStart;
     public AudioSource enemySpawn;
     public PlayerScript pScript;
+    public VictoryScreen VicScreen;
+
 
     public int initialDelay = 5; // Initial delay before the first wave starts
     public float timeBetweenWaves = 5f; // Time delay between waves
@@ -43,6 +45,7 @@ public class WaveSpawner : MonoBehaviour
 
         // All waves spawned, game over or victory condition
         Debug.Log("All waves spawned!");
+        VicScreen.gameClear("Arena Clear");
     }
 
     private IEnumerator SpawnWave()
@@ -89,6 +92,7 @@ public class WaveSpawner : MonoBehaviour
         enemyScript.playerTransform = playerTransform;
         enemyScript.enCount = enCount;
         enemyScript.wvSpwnr = wvSpwnr;
+        enemyScript.vScrn = VicScreen;
         enemySpawn.Play();
     }
 

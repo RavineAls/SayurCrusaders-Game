@@ -16,14 +16,14 @@ EditorBuildSettings:
     guid: 6e70b0ed30ea0e3498886f6cf798030b
   - enabled: 1
     path: Assets/Scenes/KerisScene.unity
-    guid: c52240cb5bcc18b4b99791f6373b8d4a
+    guid: 91beb322efc3fa148a2c36caf7707ef7
   - enabled: 1
     path: Assets/Scenes/KujangScene.unity
-    guid: c13293be0e93a3045ae2215c4da4cc7e
-  - enabled: 1
-    path: Assets/Scenes/PanScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    guid: 232b5b8a35008624181ac1396d1ad788
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
-    guid: 91beb322efc3fa148a2c36caf7707ef7
+    guid: 3d1532f169ada584691268b271e4f0ea
+  - enabled: 1
+    path: Assets/Scenes/PanScene.unity
+    guid: 9c02d80600583be4cb912a88141f7d51
   m_configObjects: {}

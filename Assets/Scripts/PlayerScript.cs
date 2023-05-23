@@ -9,12 +9,22 @@ public class PlayerScript : MonoBehaviour
     public HealthDisplay healthDisplay;
     public bool vulnerable = true;
     public AudioSource hitSound;
+    public VictoryScreen vScrn;
+
     // Start is called before the first frame update
     void Start()
     {
         vulnerable = true;
         currentHealth = maxHealth;
         healthDisplay.UpdateHealth(currentHealth);
+    }
+
+    void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            vScrn.gameClear("Arena Failed");
+        }    
     }
 
     public void TakeDamage(int damageAmount)

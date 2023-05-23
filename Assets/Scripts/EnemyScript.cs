@@ -18,6 +18,7 @@ public class EnemyScript : MonoBehaviour
     Rigidbody rb;
     public EnemyCounter enCount;
     public WaveSpawner wvSpwnr;
+    public VictoryScreen vScrn;
 
     void Start()
     {
@@ -64,13 +65,15 @@ public class EnemyScript : MonoBehaviour
 
     public IEnumerator enemyDead()
     {
-        yield return new WaitForSeconds(0.25f);
+        speed = 0;
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 
     void OnDestroy()
     {
         enCount.EnemySpawnedOrDestroyed();
+        vScrn.updateDefEnemy();
         if(wvSpwnr != null)
         {
             wvSpwnr.EnemyDefeated();

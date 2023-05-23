@@ -8,6 +8,7 @@ TagManager:
   - Enemy_Soft
   - Ground
   - Spawner
+  - VicScreen
   layers:
   - Default
   - TransparentFX
