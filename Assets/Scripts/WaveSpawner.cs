@@ -5,6 +5,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public GameObject strongEnemyPrefab; // Prefab for the stronger enemy
     public GameObject[] weakEnemyPrefab; // Prefab for the weaker enemy
+    public GameObject BossPrefab; // Prefab for the Boss
     public Transform[] spawnPoints; // Array of spawn points for enemies
     public WaveCounter wvCount;
     public AudioSource waveStart;
@@ -36,12 +37,18 @@ public class WaveSpawner : MonoBehaviour
             currentWave++;
             wvCount.WaveStart(currentWave);
             StartCoroutine(SpawnWave());
+            if (currentWave == 5){
+                SpawnPrefab(BossPrefab, spawnPoints[0]);
+                spawnedEnemies++;
+            }
 
             // Wait for all enemies to be defeated
             yield return new WaitUntil(() => spawnedEnemies == 0);
 
             yield return new WaitForSeconds(timeBetweenWaves);
         }
+
+        
 
         // All waves spawned, game over or victory condition
         Debug.Log("All waves spawned!");
