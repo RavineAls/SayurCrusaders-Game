@@ -2139,6 +2139,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1695386897620489773, guid: 6c151c8192752a3489c42900f5ba97a4, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6c151c8192752a3489c42900f5ba97a4, type: 3}
       propertyPath: m_Name
       value: Arena
@@ -3127,14 +3131,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Q - Quit to main menu
+  m_text: 'Esc - Quit to main menu
 
     LClick - Attack
 
     LShift - Run
 
-    C -
-    Lock/Unlock Cursor'
+    C
+    - Lock/Unlock Cursor'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
